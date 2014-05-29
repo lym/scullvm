@@ -35,7 +35,8 @@ install:
 clean:
 	rm -rf *.o *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions
 
-depend .depend dep:
+PHONY += depend dep
+depend dep:
 	$(CC) $(EXTRA_CFLAGS) -M *.c > .depend
 
 ifeq (.depend,$(wildcard .depend))
